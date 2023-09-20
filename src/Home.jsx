@@ -1,7 +1,7 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import FeaturedProductList from './components/FeaturedProductList'
+import FeaturedCollectionList from './components/FeaturedCollectionList'
 import BestSellerProductList from './components/BestSellerProductList'
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
                     <Hero />
                 </div>
                 <main>
-                    <FeaturedProductList />
+                    <FeaturedCollectionList />
                     <BestSellerProductList />
                     {/* Featured section */}
                     <section aria-labelledby="social-impact-heading" className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 sm:pt-32 lg:px-8">

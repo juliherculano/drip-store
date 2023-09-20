@@ -1,9 +1,9 @@
-import FeaturedProductCard from "./FeaturedProductCard"
-import collection1 from '../assets/images/collection1.png'
-import collection2 from '../assets/images/collection2.png'
-import collection3 from '../assets/images/collection3.png'
+import FeaturedCollectionCard from "./FeaturedCollectionCard"
+import { featuredCollections } from "../api/db"
 
-export default function FeaturedProductList() {
+export default function FeaturedCollectionList() {
+    const collections = featuredCollections.map(item => <FeaturedCollectionCard key={item.id} collectionItem={item} />);
+
     return (
         <section aria-labelledby="category-heading" className="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
             <div className="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0">
@@ -13,9 +13,7 @@ export default function FeaturedProductList() {
                 <div className="-my-2">
                     <div className="relative box-content h-80  overflow-x-auto py-2 xl:overflow-visible">
                         <div className="absolute flex space-x-8 px-4 h-80 sm:px-6 lg:px-8 xl:relative xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-x-0 xl:px-0">
-                            <FeaturedProductCard imgSrc={collection1} />
-                            <FeaturedProductCard imgSrc={collection2} />
-                            <FeaturedProductCard imgSrc={collection3} />
+                            { collections }
                         </div>
                     </div>
                 </div>
