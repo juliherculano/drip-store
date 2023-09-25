@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; 
 import {
     MagnifyingGlassIcon,
     UserIcon,
@@ -16,10 +17,10 @@ export default function Header() {
                             <div className="flex h-28 items-center justify-between">
                                 {/* Logo (lg+) */}
                                 <div className="hidden md:flex md:flex-1 md:items-center">
-                                    <a href="#" className='flex flex-row space-x-3'>
+                                    <Link to="/" className='flex flex-row space-x-3'>
                                         <img className="h-10 w-auto" src={logo} alt="" />
                                         <span className="text-4xl font-semibold text-pink-700">Drip Store</span>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="flex flex-1 items-center justify-center px-2 sm:inset-0">
                                     <div className="w-full sm:max-w-xs">
@@ -57,8 +58,8 @@ export default function Header() {
                     </div>
                     {/* Secondary navigation */}
                     <div className="py-4 space-x-4">
-                        <a href="#" className="inline-flex items-center border-b-2 border-pink-700 px-1 pt-1 text-xl font-normal text-gray-900">Home</a>
-                        <a href="#" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-normal text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+                        <Link to="/" className="inline-flex items-center border-b-2 border-pink-700 px-1 pt-1 text-xl font-normal text-gray-900">Home</Link>
+                        <Link to="/products" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-normal text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</Link>
                         <a href="#" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-normal text-gray-500 hover:border-gray-300 hover:text-gray-700">Categories</a>
                         <a href="#" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-normal text-gray-500 hover:border-gray-300 hover:text-gray-700">Orders</a>
                     </div>

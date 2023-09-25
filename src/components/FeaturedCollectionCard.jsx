@@ -1,10 +1,12 @@
+import DiscountBadge from "./DiscountBadge";
+
 export default function FeaturedCollectionCard({ collectionItem }) {
     return (
             <div href="#" className="relative flex space-y-10 h-80 w-96 flex-col overflow-hidden rounded-lg p-6 xl:w-auto bg-indigo-100">
                 <span aria-hidden="true" className="absolute inset-0">
                     <img src={collectionItem.image} className="h-full w-full object-cover object-center" />
                 </span>
-                <span className="absolute top-0 left-4 items-center rounded-full bg-yellow-200 px-2 py-1 text-lg font-bold text-gray-900">{collectionItem.discount}% OFF</span>
+                <DiscountBadge discount={collectionItem.discount} />
                 <div className='absolute bottom-8 flex flex-col space-y-4'>
                     <span className="text-left text-3xl font-bold text-gray-900">{collectionItem.name}</span>
                     <span className="justify-start" aria-hidden="true">

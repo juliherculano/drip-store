@@ -1,9 +1,9 @@
-import BestSellerProductCard from './BestSellerProductCard'
+import ProductCard from './ProductCard'
 import { bestSellerProducts } from '../api/db'
 import tenis2 from '../assets/images/tenis2.png'
 
 export default function BestSellerProductList() {
-    const products = bestSellerProducts.map(item => <BestSellerProductCard key={item.id} productItem={item} />);
+    const products = bestSellerProducts.map(item => <ProductCard key={item.id} productItem={item} />);
     return (
         <section className="pt-24 sm:pt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
             <div className="px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:px-0">

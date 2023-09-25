@@ -1,11 +1,6 @@
-export default function BestSellerProductCard({ productItem }) {
-    const discountBadge = productItem.discount > 0 ? (
-        <div className="absolute inset-x-0 top-0 flex h-72 items-start justify-start overflow-hidden rounded-lg p-4">
-            <span className="inline-flex items-center rounded-full bg-yellow-200 px-2 py-1 text-lg font-bold text-gray-900">
-                {productItem.discount}% OFF
-            </span>
-        </div>
-    ) : null;
+import DiscountBadge from "./DiscountBadge";
+
+export default function ProductCard({ productItem }) {
     return (
         <div className="relative">
             <div className="relative h-72 w-full overflow-hidden rounded-lg">
@@ -26,7 +21,7 @@ export default function BestSellerProductCard({ productItem }) {
                 </div>
                 <p className="text-3xl font-medium text-gray-900">$ {productItem.price}</p>
             </div>
-            {discountBadge}
+            <DiscountBadge discount={productItem.discount} />
         </div>
     );
 }
