@@ -5,6 +5,7 @@ import {
     ShoppingBagIcon,
 } from '@heroicons/react/24/outline'
 import logo from '../assets/images/logo.png'
+import Menu from "./Menu";
 
 export default function Header() {
     return (
@@ -56,13 +57,7 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-                    {/* Secondary navigation */}
-                    <div className="py-4 space-x-4">
-                        <Link to="/" className="inline-flex items-center border-b-2 border-pink-700 px-1 pt-1 text-xl font-normal text-gray-900">Home</Link>
-                        <Link to="/products" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-normal text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</Link>
-                        <a href="#" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-normal text-gray-500 hover:border-gray-300 hover:text-gray-700">Categories</a>
-                        <a href="#" className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-xl font-normal text-gray-500 hover:border-gray-300 hover:text-gray-700">Orders</a>
-                    </div>
+                    <Menu />
                 </div>
             </nav>
         </header>

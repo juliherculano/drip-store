@@ -1,9 +1,31 @@
+import { useState } from "react";
 import { products } from "../api/db";
 import ProductCard from "../components/ProductCard";
 
 
 export default function Products() {
-    const productsListItems = products.map(item => <ProductCard key={item.id} productItem={item} />);
+    const [productList, setProductList] = useState(products);
+    const productsListItems = productList.map(item => <ProductCard key={item.id} productItem={item} />);
+
+    function filterColor(event) {
+        const checkbox = event.target;
+        if (checkbox.checked === false) {
+            setProductList(products);
+            return;
+        }
+        const filteredProducts = productList.filter(item => item.color.toLowerCase() === checkbox.value.toLowerCase());
+        setProductList(filteredProducts);
+    }
+
+    function filterPrice(event) {
+        const checkbox = event.target;
+        if (checkbox.checked === false) {
+            setProductList(products);
+            return;
+        }
+        const filteredProducts = productList.filter(item => item.price < checkbox.value);
+        setProductList(filteredProducts);
+    }
     return (
         <>
             <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -26,13 +48,32 @@ export default function Products() {
                                             <div className="flex items-center">
                                                 <input
                                                     id='color-white'
-                                                    onChange={() => {}}
+                                                    onChange={filterColor}
                                                     value='white'
                                                     type="checkbox"
                                                     className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                                 />
                                                 <label htmlFor='color-white' className="ml-3 text-sm text-gray-600">
                                                     White
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div>
+                                    <fieldset>
+                                        <legend className="block text-sm font-medium text-gray-900">Price</legend>
+                                        <div className="space-y-3 pt-6">
+                                            <div className="flex items-center">
+                                                <input
+                                                    id='color-white'
+                                                    onChange={filterPrice}
+                                                    value='100'
+                                                    type="checkbox"
+                                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                                />
+                                                <label htmlFor='color-white' className="ml-3 text-sm text-gray-600">
+                                                    Less than $100
                                                 </label>
                                             </div>
                                         </div>
